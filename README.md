@@ -3,6 +3,8 @@
 
 基于 ServerStatus-Toyo 最新版本稍作修改。
 
+基于原作者的脚本进行了更改，应该可以解决使用Cokemine.com下载安装后无法启动，后期也懒得同步源码，直接使用原作者Github源码下载
+
 ## 特性
 
 服务端客户端脚本支持系统：Centos 7、Debian 8、Ubuntu 15.10 及以上、ArchLinux
@@ -50,8 +52,10 @@ ServerStatus-Hotaru 仍会继续维护
 服务端：
 
 ```bash
-wget https://raw.githubusercontent.com/cokemine/ServerStatus-Hotaru/master/status.sh
-# wget https://cokemine.coding.net/p/hotarunet/d/ServerStatus-Hotaru/git/raw/master/status.sh 若服务器位于中国大陆建议选择Coding.net仓库
+wget https://raw.githubusercontent.com/bilibilimrlei/ServerStatus-Hotaru/master/status.sh
+或
+wget https://github.do/https://raw.githubusercontent.com/bilibilimrlei/ServerStatus-Hotaru/master/status.sh
+
 bash status.sh s
 ```
 
