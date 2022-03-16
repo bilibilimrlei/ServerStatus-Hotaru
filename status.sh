@@ -719,7 +719,7 @@ Modify_config_client() {
 Install_jq() {
   [[ ${mirror_num} == 2 ]] && {
     github_link="https://hub.fastgit.org"
-    raw_link="https://raw.fastgit.org"
+    raw_link="https://github.do/https://raw.githubusercontent.com"
   } || {
     github_link="https://github.com"
     raw_link="https://raw.githubusercontent.com"
