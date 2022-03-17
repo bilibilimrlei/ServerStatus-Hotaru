@@ -1052,6 +1052,7 @@ menu_client() {
   echo && echo -e "  ServerStatus 一键安装管理脚本 ${Red_font_prefix}[v${sh_ver}]${Font_color_suffix}
   -- Toyo | doub.io/shell-jc3 --
   --    Modified by APTX    --
+  --    laoleic4 二次修改    --
  ${Green_font_prefix} 0.${Font_color_suffix} 升级脚本
  ————————————
  ${Green_font_prefix} 1.${Font_color_suffix} 安装 客户端
@@ -1131,7 +1132,8 @@ menu_server() {
   echo && echo -e "  ServerStatus 一键安装管理脚本 ${Red_font_prefix}[v${sh_ver}]${Font_color_suffix}
   -- Toyo | doub.io/shell-jc3 --
   --    Modified by APTX    --
- ${Green_font_prefix} 0.${Font_color_suffix} 升级脚本
+  --    laoleic4 二次修改    --
+ ${Green_font_prefix} 0.${Font_color_suffix} 升级脚本（脚本推荐在原下载点替换）
  ————————————
  ${Green_font_prefix} 1.${Font_color_suffix} 安装 服务端
  ${Green_font_prefix} 2.${Font_color_suffix} 更新 服务端
@@ -1198,8 +1200,8 @@ menu_server() {
   esac
 }
 Set_Mirror() {
-  echo -e "${Info} 请输入要选择的下载源，默认使用GitHub，中国大陆建议选择Coding.net，但是不建议将服务端部署在中国大陆主机上
-  ${Green_font_prefix} 1.${Font_color_suffix} GitHub
+  echo -e "${Info} 请输入要选择的下载源，默认使用GitHub镜像站，主要解决使用Coodng.net下载源安装出现启动失败问题
+  ${Green_font_prefix} 1.${Font_color_suffix} GitHub（全部替换成国内镜像站，资源更新可能不及时）
   ${Green_font_prefix} 2.${Font_color_suffix} Coding.net (部分资源通过 FastGit 提供服务下载, Thanks to FastGit.org for the service)"
   read -erp "请输入数字 [1-2], 默认为 1:" mirror_num
   [[ -z "${mirror_num}" ]] && mirror_num=1
