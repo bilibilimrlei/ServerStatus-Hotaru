@@ -28,7 +28,7 @@ jq_file="${file}/jq"
 [[ ! -e ${jq_file} ]] && jq_file="/usr/bin/jq"
 region_json="${file}/region.json"
 
-github_prefix="https://raw.githubusercontent.com/CokeMine/ServerStatus-Hotaru/master"
+github_prefix="https://github.do/https://raw.githubusercontent.com/CokeMine/ServerStatus-Hotaru/master"
 coding_prefix="https://cokemine.coding.net/p/hotarunet/d/ServerStatus-Hotaru/git/raw/master"
 link_prefix=${github_prefix}
 
@@ -84,8 +84,8 @@ check_region() {
 }
 Download_Server_Status_server() {
   cd "/tmp" || exit 1
-  [[ ${mirror_num} == 2 ]] && bundle_link="https://cokemine.coding.net/p/hotarunet/d/ServerStatus-Hotaru/git/archive/master/?download=true" || bundle_link="https://github.com/CokeMine/ServerStatus-Hotaru/archive/refs/heads/master.zip"
-  [[ ${mirror_num} == 2 ]] && github_link="https://hub.fastgit.org" || github_link="https://github.com"
+  [[ ${mirror_num} == 2 ]] && bundle_link="https://cokemine.coding.net/p/hotarunet/d/ServerStatus-Hotaru/git/archive/master/?download=true" || bundle_link="https://github.do/https://github.com/CokeMine/ServerStatus-Hotaru/archive/refs/heads/master.zip"
+  [[ ${mirror_num} == 2 ]] && github_link="https://hub.fastgit.org" || github_link="https://github.do/https://github.com"
   wget -N --no-check-certificate "${bundle_link}" -O "master.zip"
   [[ ! -e "master.zip" ]] && echo -e "${Error} ServerStatus 服务端下载失败 !" && exit 1
   unzip master.zip
@@ -721,8 +721,8 @@ Install_jq() {
     github_link="https://hub.fastgit.org"
     raw_link="https://raw.fastgit.org"
   } || {
-    github_link="https://github.com"
-    raw_link="https://raw.githubusercontent.com"
+    github_link="https://github.do/https://github.com"
+    raw_link="https://github.do/https://raw.githubusercontent.com"
   }
   if [[ ! -e ${jq_file} ]]; then
     if [[ ${bit} == "x86_64" ]]; then
