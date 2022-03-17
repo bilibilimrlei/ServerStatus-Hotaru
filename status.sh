@@ -84,8 +84,8 @@ check_region() {
 }
 Download_Server_Status_server() {
   cd "/tmp" || exit 1
-  [[ ${mirror_num} == 2 ]] && bundle_link="https://github.do/https://raw.githubusercontent.com/CokeMine/ServerStatus-Hotaru/archive/master.zip/" || bundle_link="https://github.com/CokeMine/ServerStatus-Hotaru/archive/master.zip"
-  [[ ${mirror_num} == 2 ]] && github_link="https://raw.iqiq.io" || github_link="https://github.com"
+  [[ ${mirror_num} == 2 ]] && bundle_link="https://cokemine.coding.net/p/hotarunet/d/ServerStatus-Hotaru/git/archive/master/?download=true" || bundle_link="https://github.com/CokeMine/ServerStatus-Hotaru/archive/refs/heads/master.zip"
+  [[ ${mirror_num} == 2 ]] && github_link="https://hub.fastgit.org" || github_link="https://github.com"
   wget -N --no-check-certificate "${bundle_link}" -O "master.zip"
   [[ ! -e "master.zip" ]] && echo -e "${Error} ServerStatus 服务端下载失败 !" && exit 1
   unzip master.zip
@@ -719,7 +719,7 @@ Modify_config_client() {
 Install_jq() {
   [[ ${mirror_num} == 2 ]] && {
     github_link="https://hub.fastgit.org"
-    raw_link="https://github.do/https://raw.githubusercontent.com"
+    raw_link="https://raw.fastgit.org"
   } || {
     github_link="https://github.com"
     raw_link="https://raw.githubusercontent.com"
@@ -1198,9 +1198,9 @@ menu_server() {
   esac
 }
 Set_Mirror() {
-  echo -e "${Info} 请输入要选择的下载源，默认使用GitHub，中国地区已更换别的镜像站，Coding和Fastgit已更换为其他Github镜像站
+  echo -e "${Info} 请输入要选择的下载源，默认使用GitHub，中国大陆建议选择Coding.net，但是不建议将服务端部署在中国大陆主机上
   ${Green_font_prefix} 1.${Font_color_suffix} GitHub
-  ${Green_font_prefix} 2.${Font_color_suffix} Gtihub镜像站"
+  ${Green_font_prefix} 2.${Font_color_suffix} Coding.net (部分资源通过 FastGit 提供服务下载, Thanks to FastGit.org for the service)"
   read -erp "请输入数字 [1-2], 默认为 1:" mirror_num
   [[ -z "${mirror_num}" ]] && mirror_num=1
   [[ ${mirror_num} == 2 ]] && link_prefix=${coding_prefix} || link_prefix=${github_prefix}
